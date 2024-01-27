@@ -1,20 +1,20 @@
 console.log("welcome to spotify");
 
 let songIndex =0;
-let audioElement = new Audio('songs/11.mp3');
+let audioElement = new Audio('11.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems =Array.from(document.getElementsByClassName('songItem'));
 let songs=[
-    {songName:"295-Siddhu-Moosewala",filePath:"songs/11.mp3",coverPath:"covers/1.jpg"},
-    {songName:"Approach-Siddhu-Moosewala",filePath:"songs/12.mp3",coverPath:"covers/2.jpg"},
-    {songName:"Desperado",filePath:"songs/13.mp3",coverPath:"covers/3.jpg"},
-    {songName:"US-Siddhu-Moosewala",filePath:"songs/17.mp3",coverPath:"covers/4.jpg"},
-    {songName:"Laado-Mc Square",filePath:"songs/14.mp3",coverPath:"covers/5.jpg"},
-    {songName:"Oonchi Oonchi Deeware",filePath:"songs/15.mp3",coverPath:"covers/6.jpg"},
-    {songName:"Mehenge Ne Moti",filePath:"songs/16.mp3",coverPath:"covers/7.jpg"},
+    {songName:"295-Siddhu-Moosewala",filePath:"11.mp3",coverPath:"covers/1.jpg"},
+    {songName:"Approach-Siddhu-Moosewala",filePath:"12.mp3",coverPath:"covers/2.jpg"},
+    {songName:"Desperado",filePath:"13.mp3",coverPath:"covers/3.jpg"},
+    {songName:"US-Siddhu-Moosewala",filePath:"17.mp3",coverPath:"covers/4.jpg"},
+    {songName:"Laado-Mc Square",filePath:"14.mp3",coverPath:"covers/5.jpg"},
+    {songName:"Oonchi Oonchi Deeware",filePath:"15.mp3",coverPath:"covers/6.jpg"},
+    {songName:"Mehenge Ne Moti",filePath:"16.mp3",coverPath:"covers/7.jpg"},
 ]
 songItems.forEach((element, i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
@@ -61,7 +61,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src=`songs/${songIndex+1}.mp3`;
+        audioElement.src=`${songIndex+1}.mp3`;
         masterSongName.innerText=songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -78,7 +78,7 @@ document.getElementById('next').addEventListener('click',()=>{
     else{
         songIndex +=1;
     }
-    audioElement.src=`songs/${songIndex+1}.mp3`;
+    audioElement.src=`${songIndex+1}.mp3`;
     masterSongName.innerText=songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -93,7 +93,7 @@ document.getElementById('previous').addEventListener('click',()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src=`songs/${songIndex+1}.mp3`;
+    audioElement.src=`${songIndex+1}.mp3`;
     masterSongName.innerText=songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
